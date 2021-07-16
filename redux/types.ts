@@ -1,0 +1,3 @@
+export const GET_SURAH_LIST = "GET_SURAH_LIST";
+export const GET_DETAIL_SURAH = "GET_DETAIL_SURAH";
+export const DELETE_SURAH = "DELETE_SURAH";
