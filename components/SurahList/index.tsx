@@ -2,6 +2,7 @@ import React, { Dispatch, SetStateAction, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSurah } from "../../redux/action";
 import { RootReducer } from "../../redux/reducer";
+import { motion } from "framer-motion";
 import Card from "../Card";
 
 interface Surah {
@@ -30,7 +31,7 @@ export default function SurahList(props: SurahListProps) {
 
   useEffect(() => {
     dispatch(getSurah());
-  }, [getSurah]);
+  }, [dispatch]);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-12 w-full">

@@ -1,4 +1,5 @@
 import { useRouter } from "next/dist/client/router";
+import { motion } from "framer-motion";
 
 interface CardProps {
   number: number;
@@ -11,7 +12,9 @@ export default function Card(props: CardProps) {
   const router = useRouter();
   const { number, namaSurah, artiSurah, kaligrafi } = props;
   return (
-    <div
+    <motion.div
+      layoutId={String(number)}
+      whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
       className="flex justify-between shadow-md rounded-md cursor-pointer"
       onClick={() => {
         router.push(`/${number}`);
@@ -27,6 +30,6 @@ export default function Card(props: CardProps) {
         </div>
         <div>{artiSurah}</div>
       </div>
-    </div>
+    </motion.div>
   );
 }
